@@ -1,0 +1,126 @@
+/* Display — Sora */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+/* Body — Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+/* ── Custom theme tokens (HeyRetro Design Palette) ── */
+@theme {
+  --color-cream-50: #FAF8F5;
+  --color-cream-100: #F2EFE9;
+  --color-cream-200: #E6E1D7;
+  
+  --color-coral: #F95738;
+  --color-coral-dark: #E04326;
+  --color-coral-light: #FFF0EC;
+  --color-coral-subtle: #FFE4DC;
+  
+  --color-dark-surface: #111111;
+  --color-dark-card: #1C1C1C;
+  --color-dark-border: #2A2A2A;
+  
+  --color-charcoal: #18181B;
+  --color-charcoal-muted: #52525B;
+  --color-charcoal-subtle: #71717A;
+
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Base resets ── */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-cream-50);
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-charcoal-muted);
+    background-color: var(--color-cream-50);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--color-charcoal);
+  }
+}
+
+/* ── Custom Utilities ── */
+.btn-coral {
+  background-color: var(--color-coral);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-coral:hover {
+  background-color: var(--color-coral-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(249, 87, 56, 0.28);
+}
+
+.btn-coral:active {
+  transform: translateY(0);
+}
+
+.card-white {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(24, 24, 27, 0.07);
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-white:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+  border-color: rgba(249, 87, 56, 0.2);
+}
+
+/* ── Animations ── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-subtle {
+  animation: float-subtle 4s ease-in-out infinite;
+}
+
+
