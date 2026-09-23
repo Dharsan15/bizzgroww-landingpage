@@ -1,11 +1,3 @@
-const footerLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
-]
-
 const socials = [
   {
     name: 'LinkedIn',
@@ -35,9 +27,9 @@ const socials = [
 
 const footerCols = [
   {
-    title: 'Product & Services',
+    title: 'Services',
     links: [
-      { label: 'Web Engineering', href: '#services' },
+      { label: 'Website Development', href: '#services' },
       { label: 'Mobile Apps', href: '#services' },
       { label: 'Digital Marketing', href: '#services' },
       { label: 'Content Creation', href: '#services' },
@@ -45,20 +37,20 @@ const footerCols = [
     ],
   },
   {
-    title: 'Custom Solutions',
+    title: 'Process',
     links: [
-      { label: 'Full-Stack Web App', href: '#contact' },
-      { label: 'Cross-Platform Mobile', href: '#contact' },
-      { label: 'Performance Acquisition', href: '#contact' },
-      { label: 'Enterprise Squads', href: '#enterprise' },
+      { label: '01 Audit & Strategy', href: '#process' },
+      { label: '02 Design & Prototype', href: '#process' },
+      { label: '03 High-Velocity Build', href: '#process' },
+      { label: '04 Capture & Scale', href: '#process' },
     ],
   },
   {
-    title: 'Company',
+    title: 'Quick Links',
     links: [
+      { label: 'Home', href: '#home' },
+      { label: 'Services', href: '#services' },
       { label: 'Process', href: '#process' },
-      { label: 'Testimonials', href: '#testimonials' },
-      { label: 'FAQ', href: '#faq' },
       { label: 'Contact Us', href: '#contact' },
     ],
   },
@@ -66,22 +58,23 @@ const footerCols = [
 
 export default function Footer() {
   return (
-    <footer className="bg-cream-100 border-t border-black/[0.08] text-charcoal">
+    <footer className="bg-white border-t border-slate-200/80 text-slate-700">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand Summary */}
           <div className="md:col-span-4">
             <a
               href="#home"
-              className="flex items-center gap-2 font-display text-xl font-extrabold text-charcoal mb-4"
+              className="flex items-center gap-3 mb-4 group focus-visible:outline-none"
             >
-              <span className="w-8 h-8 rounded-lg bg-coral text-white flex items-center justify-center font-bold text-sm shadow-sm shadow-coral/30">
-                B
-              </span>
-              <span>Bizgroww</span>
+              <img
+                src="/logo.png"
+                alt="bizgrw logo"
+                className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+              />
             </a>
-            <p className="font-body text-xs text-charcoal-muted leading-relaxed max-w-sm mb-6">
-              Bizgroww is a dedicated digital growth agency engineering high-converting web apps, mobile products, and scalable acquisition funnels for ambitious brands.
+            <p className="font-body text-xs text-slate-500 leading-relaxed max-w-sm mb-6">
+              bizgrw is a digital agency helping ambitious businesses build high-converting websites, mobile products, and growth campaigns.
             </p>
             <div className="flex gap-3">
               {socials.map((s, i) => (
@@ -89,7 +82,7 @@ export default function Footer() {
                   key={i}
                   href="#"
                   aria-label={s.name}
-                  className="w-8 h-8 rounded-full bg-white border border-black/10 flex items-center justify-center text-charcoal-muted hover:border-coral hover:text-coral transition-all text-xs shadow-xs"
+                  className="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all text-xs"
                 >
                   {s.icon}
                 </a>
@@ -101,7 +94,7 @@ export default function Footer() {
           <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
             {footerCols.map((col, i) => (
               <div key={i}>
-                <h4 className="font-display text-xs font-bold uppercase tracking-wider text-charcoal mb-4">
+                <h4 className="font-display text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">
                   {col.title}
                 </h4>
                 <ul className="space-y-2.5">
@@ -109,7 +102,7 @@ export default function Footer() {
                     <li key={idx}>
                       <a
                         href={link.href}
-                        className="font-body text-xs text-charcoal-muted hover:text-coral transition-colors"
+                        className="font-body text-xs text-slate-500 hover:text-blue-600 transition-colors"
                       >
                         {link.label}
                       </a>
@@ -122,17 +115,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-6 border-t border-black/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-body text-charcoal-subtle">
-          <p>© 2026 Bizgroww Agency Inc. All rights reserved.</p>
+        <div className="mt-14 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-body text-slate-400">
+          <p>© 2026 bizgrw • Grow Your Business.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-charcoal transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-charcoal transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-charcoal transition-colors">Security Specs</a>
+            <a href="#" className="hover:text-slate-700 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-700 transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
     </footer>
   )
 }
-
-

@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react'
 const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Process', href: '#process' },
-  { label: 'Enterprise', href: '#enterprise' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -27,30 +25,31 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-cream-50/90 backdrop-blur-md border-b border-black/[0.06] shadow-sm py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs py-2'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Prominent Logo */}
           <a
             href="#home"
-            className="flex items-center gap-2 font-display text-xl font-extrabold text-charcoal transition-opacity hover:opacity-80 focus-visible:outline-none"
+            className="flex items-center group focus-visible:outline-none py-1"
           >
-            <span className="w-8 h-8 rounded-lg bg-coral text-white flex items-center justify-center font-bold text-sm shadow-sm shadow-coral/30">
-              B
-            </span>
-            <span>Bizgroww</span>
+            <img
+              src="/logo.png"
+              alt="bizgrw logo"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop nav links */}
-          <nav className="hidden md:flex items-center gap-8 bg-white/80 backdrop-blur-sm border border-black/[0.06] px-6 py-2 rounded-full shadow-sm">
+          <nav className="hidden md:flex items-center gap-8 bg-white/90 backdrop-blur-md border border-slate-200/80 px-7 py-2.5 rounded-full shadow-xs">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-body text-sm font-medium text-charcoal-muted transition-colors hover:text-coral focus-visible:outline-none"
+                className="font-body text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 focus-visible:outline-none"
               >
                 {link.label}
               </a>
@@ -61,22 +60,22 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="#contact"
-              className="font-body text-sm font-medium text-charcoal-muted hover:text-charcoal transition-colors px-3 py-2"
+              className="font-body text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors px-3 py-2"
             >
               Contact
             </a>
             <a
               href="#contact"
-              className="btn-coral px-5 py-2.5 text-sm shadow-sm"
+              className="btn-primary px-6 py-2.5 text-sm"
             >
-              Start Your Growth →
+              Book a call
             </a>
           </div>
 
           {/* Mobile menu hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-lg text-charcoal hover:bg-black/5 focus:outline-none"
+            className="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none"
             aria-label="Toggle Menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,24 +91,24 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-cream-50 border-b border-black/[0.06] px-6 py-6 space-y-4 animate-fade-up">
+        <div className="md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-lg animate-fade-up">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block font-display text-base font-semibold text-charcoal hover:text-coral py-2"
+              className="block font-display text-base font-semibold text-slate-800 hover:text-blue-600 py-2"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t border-black/[0.06] flex flex-col gap-3">
+          <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="btn-coral w-full py-3 text-sm text-center"
+              className="btn-primary w-full py-3 text-sm text-center"
             >
-              Start Your Growth →
+              Book a call
             </a>
           </div>
         </div>
@@ -117,4 +116,3 @@ export default function Navbar() {
     </header>
   )
 }
-

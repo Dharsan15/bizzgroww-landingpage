@@ -3,7 +3,7 @@ import { useState } from 'react'
 const contactInfo = [
   {
     label: 'Email',
-    value: 'hello@bizgroww.com',
+    value: 'hello@bizgrw.com',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -61,9 +61,10 @@ const socials = [
 
 export default function Contact() {
   const [form, setForm] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    company: '',
+    phone: '',
     message: '',
   })
 
@@ -73,40 +74,41 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert('Thanks for reaching out! Our team will contact you within 24 hours.')
-    setForm({ name: '', email: '', company: '', message: '' })
+    alert('Thank you! Our bizgrw team will get back to you within 24 hours.')
+    setForm({ firstName: '', lastName: '', email: '', phone: '', message: '' })
   }
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-cream-50 border-t border-black/[0.05]">
+    <section id="contact" className="py-20 md:py-28 bg-slate-50 border-t border-slate-200/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-charcoal">
+          <span className="badge-pill mb-4">CONTACT US</span>
+          <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2">
             Let's build something great.
           </h2>
-          <p className="mt-3 font-body text-base text-charcoal-muted max-w-xl mx-auto">
-            Ready to accelerate your product growth? Send us a message and our team will get back to you within 24 hours.
+          <p className="mt-3 font-body text-base text-slate-600 max-w-xl mx-auto">
+            Ready to grow your brand? Fill out the form below and our team will get back to you within 24 hours.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left — Info */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
-            <div className="card-white p-8 bg-white mb-6">
-              <h3 className="font-display text-lg font-bold text-charcoal mb-6">
+          {/* Left — Contact Details */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <div className="card-white p-8 bg-white border border-slate-200/80">
+              <h3 className="font-display text-lg font-bold text-slate-900 mb-6">
                 Direct Contact Details
               </h3>
               <div className="space-y-6">
                 {contactInfo.map((info, i) => (
                   <div key={i} className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-coral-light flex items-center justify-center text-coral shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 border border-blue-100">
                       {info.icon}
                     </div>
                     <div>
-                      <p className="font-body text-xs font-semibold text-charcoal-subtle uppercase tracking-wider">
+                      <p className="font-body text-xs font-semibold text-slate-400 uppercase tracking-wider">
                         {info.label}
                       </p>
-                      <p className="font-display font-bold text-charcoal text-sm sm:text-base">
+                      <p className="font-display font-bold text-slate-900 text-sm sm:text-base">
                         {info.value}
                       </p>
                     </div>
@@ -116,9 +118,9 @@ export default function Contact() {
             </div>
 
             {/* Socials */}
-            <div className="card-white p-6 bg-white">
-              <p className="font-display text-xs font-bold uppercase tracking-wider text-charcoal mb-4">
-                Follow Bizgroww
+            <div className="card-white p-6 bg-white border border-slate-200/80">
+              <p className="font-display text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">
+                Follow bizgrw
               </p>
               <div className="flex gap-3">
                 {socials.map((s, i) => (
@@ -126,7 +128,7 @@ export default function Contact() {
                     key={i}
                     href="#"
                     aria-label={s.name}
-                    className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-charcoal-muted hover:border-coral hover:text-coral hover:scale-110 transition-all bg-cream-50"
+                    className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all bg-slate-50"
                   >
                     {s.icon}
                   </a>
@@ -135,52 +137,91 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right — Form */}
+          {/* Right — Clean Form Matching Reference Design */}
           <form
             onSubmit={handleSubmit}
-            className="lg:col-span-7 card-white p-8 sm:p-10 bg-white border border-black/[0.08] shadow-lg rounded-3xl"
+            className="lg:col-span-7 card-white p-8 sm:p-10 bg-white border border-slate-200/80 shadow-lg rounded-3xl"
           >
-            {[
-              { name: 'name', label: 'Your Name', type: 'text', placeholder: 'John Doe' },
-              { name: 'email', label: 'Email Address', type: 'email', placeholder: 'john@company.com' },
-              { name: 'company', label: 'Company Name', type: 'text', placeholder: 'Acme Inc.' },
-            ].map((field) => (
-              <div key={field.name} className="mb-5">
-                <label className="block font-body text-xs font-bold text-charcoal uppercase tracking-wider mb-2">
-                  {field.label}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+              <div>
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  First name *
                 </label>
                 <input
-                  name={field.name}
-                  type={field.type}
-                  value={form[field.name]}
+                  name="firstName"
+                  type="text"
+                  value={form.firstName}
                   onChange={handleChange}
-                  placeholder={field.placeholder}
-                  required={field.name !== 'company'}
-                  className="w-full bg-cream-50 border border-black/10 rounded-xl px-4 py-3.5 text-charcoal placeholder-charcoal-subtle font-body text-sm transition-all focus:border-coral focus:ring-2 focus:ring-coral/20 focus:outline-none"
+                  placeholder="Name"
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
                 />
               </div>
-            ))}
+              <div>
+                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  Last name *
+                </label>
+                <input
+                  name="lastName"
+                  type="text"
+                  value={form.lastName}
+                  onChange={handleChange}
+                  placeholder="Last name"
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div className="mb-5">
+              <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                Email *
+              </label>
+              <input
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Email address"
+                required
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+              />
+            </div>
+
+            <div className="mb-5">
+              <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                Phone
+              </label>
+              <input
+                name="phone"
+                type="tel"
+                value={form.phone}
+                onChange={handleChange}
+                placeholder="Phone number"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+              />
+            </div>
 
             <div className="mb-6">
-              <label className="block font-body text-xs font-bold text-charcoal uppercase tracking-wider mb-2">
-                Project Goal / Message
+              <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                Write your message *
               </label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Tell us about your project timeline and revenue goals..."
-                rows={5}
+                placeholder="Type your message or project description here..."
+                rows={4}
                 required
-                className="w-full bg-cream-50 border border-black/10 rounded-xl px-4 py-3.5 text-charcoal placeholder-charcoal-subtle font-body text-sm resize-none transition-all focus:border-coral focus:ring-2 focus:ring-coral/20 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm resize-none transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
               />
             </div>
 
             <button
               type="submit"
-              className="btn-coral w-full py-4 text-base shadow-md cursor-pointer"
+              className="btn-primary w-full py-4 text-base shadow-md cursor-pointer"
             >
-              Send Message →
+              Submit
             </button>
           </form>
         </div>
@@ -188,5 +229,3 @@ export default function Contact() {
     </section>
   )
 }
-
-
