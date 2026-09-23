@@ -37,15 +37,6 @@ const footerCols = [
     ],
   },
   {
-    title: 'Process',
-    links: [
-      { label: '01 Audit & Strategy', href: '#process' },
-      { label: '02 Design & Prototype', href: '#process' },
-      { label: '03 High-Velocity Build', href: '#process' },
-      { label: '04 Capture & Scale', href: '#process' },
-    ],
-  },
-  {
     title: 'Quick Links',
     links: [
       { label: 'Home', href: '#home' },
@@ -62,7 +53,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand Summary */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-5">
             <a
               href="#home"
               className="flex items-center gap-3 mb-4 group focus-visible:outline-none"
@@ -90,8 +81,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 3 Column Links */}
-          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          {/* 2 Column Links */}
+          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
             {footerCols.map((col, i) => (
               <div key={i}>
                 <h4 className="font-display text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">

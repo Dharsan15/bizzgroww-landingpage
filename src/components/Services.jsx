@@ -90,7 +90,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Dark Container Feature — Matching Reference Design */}
+        {/* Dark Container Callout Banner */}
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-14 border border-slate-800 shadow-2xl relative overflow-hidden">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-blue-400 font-display text-xs font-bold uppercase tracking-wider border border-blue-500/20 mb-6">
@@ -103,7 +103,7 @@ export default function Services() {
               From building high-converting websites to managing performance ad campaigns, <strong className="text-white font-semibold">bizgrw</strong> handles your complete digital strategy so you can focus on running your business.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <a
                 href="#contact"
                 className="btn-primary px-7 py-3.5 text-sm w-full sm:w-auto"
@@ -117,32 +117,6 @@ export default function Services() {
                 Explore services
               </a>
             </div>
-          </div>
-
-          {/* 3 Dark Inner Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-slate-800">
-            {[
-              {
-                title: 'All-in-One Digital Management',
-                desc: 'No need to hire separate agencies — we handle design, coding, ads, and content under one roof.',
-              },
-              {
-                title: 'Clear & Transparent Process',
-                desc: 'Zero technical jargon. You get clear milestones, simple updates, and real measurable results.',
-              },
-              {
-                title: 'Dedicated Growth Experts',
-                desc: 'Your own specialized team focused on bringing more customers and revenue to your business.',
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="bg-slate-800/70 border border-slate-700/60 p-6 rounded-2xl">
-                <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 font-bold text-xs flex items-center justify-center mb-4 border border-blue-500/30">
-                  ✓
-                </div>
-                <h4 className="font-display text-base font-bold text-white mb-2">{item.title}</h4>
-                <p className="font-body text-xs text-slate-400 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
 
