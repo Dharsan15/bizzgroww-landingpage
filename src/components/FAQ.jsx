@@ -2,24 +2,24 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    q: 'How fast can our project launch?',
-    a: 'Our standard sprint projects ship in 6 to 8 weeks from kickoff. We operate in weekly rapid release cycles so you see live progress every Friday.',
+    q: 'Do I need any technical knowledge?',
+    a: 'Not at all! We handle everything for you — from domain setup and website design to running ads and managing updates. You just tell us about your business goals.',
   },
   {
-    q: 'What technologies do you use for web and mobile development?',
-    a: 'We specialize in modern, high-speed stacks: React 19, Next.js, Vite, TailwindCSS, Node.js, and React Native for iOS/Android mobile apps.',
+    q: 'How fast will my website be live?',
+    a: 'Most custom websites go live in 2 to 4 weeks. We work quickly and share regular updates with you so you see steady progress every step of the way.',
   },
   {
-    q: 'Can we integrate Bizgroww into our existing Slack or Teams?',
-    a: 'Yes! On all Growth and Pro plans, your dedicated team joins your Slack or Microsoft Teams workspace for daily communication.',
+    q: 'How will bizgrw help me get new local customers?',
+    a: 'We design your website to make it super easy for visitors to call, book, or visit you. Plus, we launch simple, effective ads on Google & Facebook targeting people right in your area.',
   },
   {
-    q: 'What happens after our product goes live?',
-    a: 'We do not disappear after launch. We offer ongoing maintenance, continuous conversion optimization, performance monitoring, and ad campaign scaling.',
+    q: 'What happens after my website goes live?',
+    a: 'We don’t disappear after launch. We offer ongoing support, site updates, security monitoring, and continuous ad management so your business keeps growing.',
   },
   {
-    q: 'Do you offer custom enterprise SLAs?',
-    a: 'Yes, enterprise plans include guaranteed uptime SLAs, custom SOC-2 security protocols, and dedicated technical account managers.',
+    q: 'What if I already have a website that isn’t bringing sales?',
+    a: 'We can redesign your existing website or build a fresh, high-converting site from scratch that actually turns visitors into paying clients.',
   },
 ]
 

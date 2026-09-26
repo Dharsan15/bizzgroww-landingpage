@@ -85,10 +85,10 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-slate-50 border-t border-slate-200/60">
+    <section id="contact" className="py-10 md:py-14 bg-slate-50 border-t border-slate-200/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="badge-pill mb-4">CONTACT US</span>
+        <div className="text-center mb-8">
+          <span className="badge-pill mb-3">CONTACT US</span>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2">
             Let's build something great.
           </h2>
@@ -97,14 +97,14 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Left — Contact Details */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-            <div className="card-white p-8 bg-white border border-slate-200/80">
-              <h3 className="font-display text-lg font-bold text-slate-900 mb-6">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
+            <div className="card-white p-7 bg-white border border-slate-200/80">
+              <h3 className="font-display text-lg font-bold text-slate-900 mb-5">
                 Direct Contact Details
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {contactInfo.map((info, i) => (
                   <div key={i} className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 border border-blue-100">
@@ -133,8 +133,8 @@ export default function Contact() {
             </div>
 
             {/* Socials */}
-            <div className="card-white p-6 bg-white border border-slate-200/80">
-              <p className="font-display text-xs font-bold uppercase tracking-wider text-slate-900 mb-4">
+            <div className="card-white p-5 bg-white border border-slate-200/80">
+              <p className="font-display text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">
                 Follow bizgrw
               </p>
               <div className="flex gap-3">
@@ -171,7 +171,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Name"
                   required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
                 />
               </div>
               <div>
@@ -185,7 +185,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Last name"
                   required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
                 />
               </div>
             </div>
@@ -201,7 +201,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Email address"
                 required
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
               />
             </div>
 
@@ -215,7 +215,7 @@ export default function Contact() {
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="Phone number"
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
               />
             </div>
 
@@ -230,13 +230,13 @@ export default function Contact() {
                 placeholder="Type your message or project description here..."
                 rows={4}
                 required
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-900 placeholder-slate-400 font-body text-sm resize-none transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm resize-none transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
               />
             </div>
 
             <button
               type="submit"
-              className="btn-primary w-full py-4 text-base shadow-md cursor-pointer"
+              className="btn-primary w-full py-3.5 text-base shadow-md cursor-pointer"
             >
               Submit
             </button>

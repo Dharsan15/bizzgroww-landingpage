@@ -1,41 +1,41 @@
 const steps = [
   {
     num: '01',
-    title: 'Audit & Strategy',
-    desc: 'We look at your current setup, understand your goals, and build a simple growth roadmap.',
+    title: 'Tell Us Your Goals',
+    desc: 'We learn about your business, see what you need, and outline a simple plan to get more customers.',
     tag: 'Step One',
   },
   {
     num: '02',
-    title: 'Design & Prototype',
-    desc: 'We design modern, easy-to-use pages and prototypes so you can preview everything.',
+    title: 'Design & Preview',
+    desc: 'We create a clean, modern design for your website or app and show you a preview before launching.',
     tag: 'Step Two',
   },
   {
     num: '03',
-    title: 'High-Velocity Build',
-    desc: 'We build your fast, responsive website or mobile app using modern web technology.',
+    title: 'Build & Launch',
+    desc: 'We build your fast, mobile-friendly website so it looks great on phones, tablets, and computers.',
     tag: 'Step Three',
   },
   {
     num: '04',
-    title: 'Capture & Scale',
-    desc: 'We launch live and run ad campaigns to bring real paying customers to your business.',
+    title: 'Get New Customers',
+    desc: 'We launch live and run targeted Google & Facebook ads so local customers start calling and booking.',
     tag: 'Step Four',
   },
 ]
 
 export default function Process() {
   return (
-    <section id="process" className="py-20 md:py-28 bg-slate-50 border-t border-slate-200/60">
+    <section id="process" className="py-10 md:py-14 bg-slate-50 border-t border-slate-200/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-        <span className="badge-pill mb-4">OUR PROCESS</span>
+        <span className="badge-pill mb-3">HOW IT WORKS</span>
         <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 max-w-3xl mx-auto mt-2">
-          Clear process.{' '}
-          <span className="text-slate-500 font-normal italic">Measurable action.</span>
+          4 Simple steps.{' '}
+          <span className="text-slate-500 font-normal italic">We handle all the tech work.</span>
         </h2>
-        <p className="mt-4 font-body text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-16">
-          Four transparent steps designed to move your brand from concept to measurable revenue.
+        <p className="mt-3 font-body text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+          A clear, hassle-free path to take your business from offline to thriving online.
         </p>
 
         {/* 4-Step Grid */}

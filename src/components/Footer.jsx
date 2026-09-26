@@ -53,7 +53,7 @@ const footerCols = [
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-slate-200/80 text-slate-700">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand Summary */}
           <div className="md:col-span-5">
@@ -67,7 +67,7 @@ export default function Footer() {
                 className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </a>
-            <p className="font-body text-xs text-slate-500 leading-relaxed max-w-sm mb-6">
+            <p className="font-body text-xs text-slate-500 leading-relaxed max-w-sm mb-5">
               bizgrw is a digital agency helping ambitious businesses build high-converting websites, mobile products, and growth campaigns.
             </p>
             <div className="flex gap-3">
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-body text-slate-400">
+        <div className="mt-10 pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-body text-slate-400">
           <p>© 2026 bizgrw • Grow Your Business.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-slate-700 transition-colors">Privacy Policy</a>

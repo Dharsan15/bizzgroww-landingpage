@@ -2,64 +2,63 @@ import { useState } from 'react'
 
 const plans = [
   {
-    name: 'Audit & Sprint',
-    priceMonthly: '$1,490',
-    priceYearly: '$1,190',
-    desc: 'For early startups testing new digital products & marketing funnels.',
+    name: 'Starter Setup',
+    priceMonthly: '$490',
+    priceYearly: '$390',
+    desc: 'Perfect for small local businesses getting started online.',
     features: [
-      'Full Technical & UX Audit',
-      'High-converting landing page',
-      'Basic Meta & Google ads setup',
-      'Weekly async updates',
+      'Custom fast-loading website',
+      'Mobile & tablet friendly design',
+      'Google Maps & business listing setup',
+      'Contact form & call button setup',
+      'Dedicated email & phone support',
     ],
-    cta: 'Start Sprint',
+    cta: 'Get Starter Plan',
     featured: false,
   },
   {
-    name: 'Growth Scale',
-    priceMonthly: '$3,490',
-    priceYearly: '$2,790',
-    desc: 'For scaling brands needing continuous development & acquisition campaigns.',
-    features: [
-      'Everything in Audit & Sprint',
-      'Custom React / Next.js web app',
-      'Dedicated marketing strategist',
-      'A/B test funnel optimization',
-      'Direct Slack channel access',
-    ],
-    cta: 'Start Growth',
-    featured: false,
-  },
-  {
-    name: 'Team Pro',
+    name: 'Business Growth',
     badge: 'Most Popular',
-    priceMonthly: '$5,990',
-    priceYearly: '$4,790',
-    desc: 'Full-stack growth team embedded in your organization.',
+    priceMonthly: '$990',
+    priceYearly: '$790',
+    desc: 'For businesses wanting steady new customer leads every month.',
     features: [
-      'Everything in Growth Scale',
-      'Dedicated Frontend & Backend devs',
-      'Native iOS & Android mobile app',
-      'Omnichannel ad & content management',
-      '24/7 Priority SLA support',
-      'Custom Analytics & Telemetry',
+      'Everything in Starter Setup',
+      'Custom web or mobile application',
+      'Google & Facebook ad campaign setup',
+      'Monthly customer lead reports',
+      'Direct WhatsApp & phone support',
     ],
-    cta: 'Start Pro Team',
-    featured: true, // Dark featured card!
+    cta: 'Start Growing',
+    featured: true, // Featured card!
   },
   {
-    name: 'Enterprise',
+    name: 'Full Service',
+    priceMonthly: '$1,990',
+    priceYearly: '$1,590',
+    desc: 'We handle all your digital marketing, website, and ads completely.',
+    features: [
+      'Everything in Business Growth',
+      'iOS & Android mobile apps',
+      'Daily Google & Meta ad management',
+      'Social media content & graphics',
+      'Priority 24/7 fast support',
+    ],
+    cta: 'Get Full Service',
+    featured: false,
+  },
+  {
+    name: 'Custom Partner',
     priceMonthly: 'Custom',
     priceYearly: 'Custom',
-    desc: 'For enterprise organizations requiring dedicated squads & custom SLAs.',
+    desc: 'For multi-location businesses needing custom digital systems.',
     features: [
-      'Dedicated multi-dev squad',
-      'Custom SOC-2 compliance setup',
-      'Executive quarterly reviews',
-      'Custom API integrations',
-      'Dedicated TAM & Architect',
+      'Multi-branch / location setup',
+      'Custom business software & APIs',
+      'Dedicated account manager',
+      'Tailored ad budgets & strategies',
     ],
-    cta: 'Contact Sales',
+    cta: 'Talk to Us',
     featured: false,
   },
 ]
@@ -68,14 +67,14 @@ export default function Pricing() {
   const [isYearly, setIsYearly] = useState(true)
 
   return (
-    <section id="pricing" className="py-20 md:py-28 bg-cream-50 border-t border-black/[0.05]">
+    <section id="pricing" className="py-20 md:py-28 bg-slate-50 border-t border-slate-200/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-charcoal max-w-3xl mx-auto">
-          Choose a plan based on how fast{' '}
-          <span className="text-charcoal-subtle font-normal italic">your revenue needs to scale.</span>
+        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 max-w-3xl mx-auto">
+          Simple, clear pricing.{' '}
+          <span className="text-slate-500 font-normal italic">Choose what fits your business.</span>
         </h2>
-        <p className="mt-4 font-body text-base sm:text-lg text-charcoal-muted max-w-2xl mx-auto">
-          Transparent pricing with zero hidden fees. Scale up or pause anytime.
+        <p className="mt-4 font-body text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
+          No hidden fees or complex contracts. Transparent pricing built to help your business win.
         </p>
 
         {/* Toggle Switch with HeyRetro badge */}
