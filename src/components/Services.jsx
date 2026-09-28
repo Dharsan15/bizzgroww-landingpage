@@ -31,11 +31,11 @@ const featureCards = [
   },
   {
     title: 'Content Creation',
-    desc: 'Eye-catching photos, graphics, and clear text that explain your services effortlessly.',
-    tag: 'Graphics & Copy',
+    desc: 'Engaging Reels, photos, graphics, and clear text that showcase your services and boost engagement effortlessly.',
+    tag: 'Reels, Graphics & Copy',
     icon: (
       <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
       </svg>
     ),
   },

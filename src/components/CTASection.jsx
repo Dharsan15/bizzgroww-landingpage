@@ -19,7 +19,7 @@ export default function CTASection() {
           </h2>
 
           <p className="mt-3 font-body text-base sm:text-lg text-slate-600 max-w-xl mx-auto">
-            Talk with the <strong className="text-slate-900">bizgrw</strong> team today. We’ll show you exactly how to get more local calls, website visits, and sales — with simple, hassle-free steps.
+            Talk with the <strong className="text-slate-900">bizgrw</strong> team today. We’ll show you exactly how to get more calls, website visits, and sales — with simple, hassle-free steps.
           </p>
 
           <div className="mt-6 flex items-center justify-center">

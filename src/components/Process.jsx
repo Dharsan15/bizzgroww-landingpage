@@ -1,27 +1,27 @@
 const steps = [
   {
     num: '01',
-    title: 'Tell Us Your Goals',
-    desc: 'We learn about your business, see what you need, and outline a simple plan to get more customers.',
-    tag: 'Step One',
+    title: 'Share Your Goal',
+    desc: 'Tell us about your business and what you want to achieve. We keep it simple, listen to your needs, and make a custom plan.',
+    tag: 'Step 1',
   },
   {
     num: '02',
-    title: 'Design & Preview',
-    desc: 'We create a clean, modern design for your website or app and show you a preview before launching.',
-    tag: 'Step Two',
+    title: 'See the Preview',
+    desc: 'We create a clean design for your website or app and show you a complete preview so you can approve it before we build.',
+    tag: 'Step 2',
   },
   {
     num: '03',
-    title: 'Build & Launch',
-    desc: 'We build your fast, mobile-friendly website so it looks great on phones, tablets, and computers.',
-    tag: 'Step Three',
+    title: 'We Build Everything',
+    desc: 'Our team builds your website or mobile app so it loads fast, looks great, and works perfectly on all phones and computers.',
+    tag: 'Step 3',
   },
   {
     num: '04',
     title: 'Get New Customers',
-    desc: 'We launch live and run targeted Google & Facebook ads so local customers start calling and booking.',
-    tag: 'Step Four',
+    desc: 'We launch your site online and run targeted local ads so new customers start calling, messaging, and visiting your business.',
+    tag: 'Step 4',
   },
 ]
 
@@ -31,11 +31,11 @@ export default function Process() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
         <span className="badge-pill mb-3">HOW IT WORKS</span>
         <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 max-w-3xl mx-auto mt-2">
-          4 Simple steps.{' '}
+          4 Easy Steps.{' '}
           <span className="text-slate-500 font-normal italic">We handle all the tech work.</span>
         </h2>
         <p className="mt-3 font-body text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8">
-          A clear, hassle-free path to take your business from offline to thriving online.
+          A simple, stress-free process to take your business online and bring in new customers.
         </p>
 
         {/* 4-Step Grid */}

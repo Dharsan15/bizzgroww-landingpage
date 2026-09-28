@@ -35,8 +35,8 @@ export default function FAQ() {
           </h2>
           <p className="mt-3 font-body text-base text-charcoal-muted">
             Have another question? Reach out to our strategy team at{' '}
-            <a href="mailto:hello@bizgroww.com" className="text-coral underline font-semibold">
-              hello@bizgroww.com
+            <a href="mailto:bizgrw@gmail.com" className="text-blue-600 underline font-semibold">
+              bizgrw@gmail.com
             </a>
           </p>
         </div>

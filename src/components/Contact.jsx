@@ -47,19 +47,10 @@ const socials = [
   },
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/company/bizgrw/',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'X (Twitter)',
-    href: '#',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     ),
   },
@@ -67,22 +58,58 @@ const socials = [
 
 export default function Contact() {
   const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
     email: '',
     phone: '',
     message: '',
   })
 
+  const [status, setStatus] = useState('idle') // 'idle' | 'submitting' | 'success' | 'error'
+  const [statusMsg, setStatusMsg] = useState('')
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Thank you! Our bizgrw team will get back to you within 24 hours.')
-    setForm({ firstName: '', lastName: '', email: '', phone: '', message: '' })
+    setStatus('submitting')
+    setStatusMsg('')
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/bizgrw@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email,
+          phone: form.phone || 'Not provided',
+          message: form.message,
+          _subject: `New Lead from Website: ${form.name}`.trim(),
+          _captcha: 'false',
+        }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok && (data.success === 'true' || data.success === true || response.status === 200)) {
+        setStatus('success')
+        setStatusMsg('Thank you! Your message has been sent directly to bizgrw@gmail.com. Our team will get back to you within 24 hours.')
+        setForm({ name: '', email: '', phone: '', message: '' })
+      } else {
+        throw new Error(data.message || 'Submission failed.')
+      }
+    } catch (err) {
+      console.error('Form submission error:', err)
+      setStatus('error')
+      setStatusMsg('There was an issue sending your message automatically. Click below to send directly via email.')
+    }
   }
+
+  const mailtoUrl = `mailto:bizgrw@gmail.com?subject=${encodeURIComponent(`New Lead: ${form.name}`)}&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nMessage:\n${form.message}`)}`
 
   return (
     <section id="contact" className="py-10 md:py-14 bg-slate-50 border-t border-slate-200/60">
@@ -159,35 +186,48 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className="lg:col-span-7 card-white p-8 sm:p-10 bg-white border border-slate-200/80 shadow-lg rounded-3xl"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-              <div>
-                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                  First name *
-                </label>
-                <input
-                  name="firstName"
-                  type="text"
-                  value={form.firstName}
-                  onChange={handleChange}
-                  placeholder="Name"
-                  required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
-                />
+            {status === 'success' && (
+              <div className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-body flex items-start gap-3">
+                <svg className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <p className="font-semibold text-emerald-900 mb-1">Message Sent Successfully!</p>
+                  <p>{statusMsg}</p>
+                </div>
               </div>
-              <div>
-                <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                  Last name *
-                </label>
-                <input
-                  name="lastName"
-                  type="text"
-                  value={form.lastName}
-                  onChange={handleChange}
-                  placeholder="Last name"
-                  required
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
-                />
+            )}
+
+            {status === 'error' && (
+              <div className="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-sm font-body flex flex-col gap-2">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <p>{statusMsg}</p>
+                </div>
+                <a
+                  href={mailtoUrl}
+                  className="mt-1 inline-flex items-center gap-2 text-xs font-semibold bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors w-fit"
+                >
+                  ✉️ Send via Direct Email App
+                </a>
               </div>
+            )}
+
+            <div className="mb-5">
+              <label className="block font-body text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                Name *
+              </label>
+              <input
+                name="name"
+                type="text"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Your full name"
+                required
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 font-body text-sm transition-all focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+              />
             </div>
 
             <div className="mb-5">
@@ -236,9 +276,20 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="btn-primary w-full py-3.5 text-base shadow-md cursor-pointer"
+              disabled={status === 'submitting'}
+              className="btn-primary w-full py-3.5 text-base shadow-md cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              Submit
+              {status === 'submitting' ? (
+                <>
+                  <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending Message...
+                </>
+              ) : (
+                'Submit Message →'
+              )}
             </button>
           </form>
         </div>
