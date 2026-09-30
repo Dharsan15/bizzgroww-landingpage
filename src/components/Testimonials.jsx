@@ -1,21 +1,21 @@
 const testimonials = [
   {
     quote:
-      "Bizgroww didn't just build our website — they rebuilt how we think about our digital presence. Revenue from organic traffic is up 140% in six months.",
+      "Bizgrw didn't just build our website — they rebuilt how we think about our digital presence. Revenue from organic traffic is up 140% in six months.",
     name: 'Priya Sharma',
     role: 'Founder at NovaByte Solutions',
     initials: 'PS',
   },
   {
     quote:
-      "Most agencies talk about being partners. Bizgroww actually shows up like one. They're in our Slack, they know our metrics, and they care about our wins.",
+      "Most agencies talk about being partners. Bizgrw actually shows up like one. They're in our Slack, they know our metrics, and they care about our wins.",
     name: 'Arjun Mehta',
     role: 'CEO at CloudLeap Technologies',
     initials: 'AM',
   },
   {
     quote:
-      'We needed to move fast for our product launch. Bizgroww delivered a production-ready app in 8 weeks that our users genuinely love using.',
+      'We needed to move fast for our product launch. Bizgrw delivered a production-ready app in 8 weeks that our users genuinely love using.',
     name: 'Kavitha Rajan',
     role: 'Head of Product at FinEdge',
     initials: 'KR',
@@ -40,7 +40,7 @@ export default function Testimonials() {
             What our partners say.
           </h2>
           <p className="mt-3 font-body text-base text-charcoal-muted max-w-xl mx-auto">
-            Real feedback from founders, product leads, and growth teams who scaled with Bizgroww.
+            Real feedback from founders, product leads, and growth teams who scaled with Bizgrw.
           </p>
         </div>
 

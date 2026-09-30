@@ -14,7 +14,7 @@ export default function Values() {
               Built for high-growth brands and enterprise scale.
             </h2>
             <p className="mt-4 font-body text-base sm:text-lg text-gray-400 leading-relaxed">
-              Bizgroww provides dedicated engineering teams, strict SLA guarantees, and enterprise security frameworks for companies looking to move fast without breaking systems.
+              Bizgrw provides dedicated engineering teams, strict SLA guarantees, and enterprise security frameworks for companies looking to move fast without breaking systems.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
