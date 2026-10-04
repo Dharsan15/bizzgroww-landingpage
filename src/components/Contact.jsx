@@ -76,36 +76,80 @@ export default function Contact() {
     setStatus('submitting')
     setStatusMsg('')
 
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/bizgrw@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email,
-          phone: form.phone || 'Not provided',
-          message: form.message,
-          _subject: `New Lead from Website: ${form.name}`.trim(),
-          _captcha: 'false',
-        }),
-      })
+    const name = form.name.trim()
+    const email = form.email.trim()
+    const phone = form.phone.trim() || 'Not provided'
+    const message = form.message.trim()
 
-      const data = await response.json()
+    const payload = {
+      name,
+      email,
+      phone,
+      message,
+      _subject: `New Lead from Website: ${name}`,
+      _template: 'table',
+      subject: `New Lead from Website: ${name}`,
+    }
 
-      if (response.ok && (data.success === 'true' || data.success === true || response.status === 200)) {
-        setStatus('success')
-        setStatusMsg('Thank you! Your message has been sent directly to bizgrw@gmail.com. Our team will get back to you within 24 hours.')
-        setForm({ name: '', email: '', phone: '', message: '' })
-      } else {
-        throw new Error(data.message || 'Submission failed.')
+    let success = false
+
+    // 1. Try Web3Forms if valid key is set
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    if (accessKey && accessKey !== 'YOUR_WEB3FORMS_ACCESS_KEY') {
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            ...payload,
+          }),
+        })
+        const data = await response.json()
+        if (response.ok && (data.success === true || data.success === 'true')) {
+          success = true
+        }
+      } catch (err) {
+        console.warn('Web3Forms submit failed, trying FormSubmit endpoint...', err)
       }
-    } catch (err) {
-      console.error('Form submission error:', err)
-      setStatus('error')
-      setStatusMsg('There was an issue sending your message automatically. Click below to send directly via email.')
+    }
+
+    // 2. Try FormSubmit AJAX endpoint (No API Key Required, sends directly to bizgrw@gmail.com)
+    if (!success) {
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/bizgrw@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        })
+        const data = await response.json()
+        if (response.ok && (data.success === 'true' || data.success === true || data.message?.includes('success'))) {
+          success = true
+        }
+      } catch (err) {
+        console.warn('FormSubmit endpoint failed:', err)
+      }
+    }
+
+    if (success) {
+      setStatus('success')
+      setStatusMsg('Our team will get back to you.')
+      setForm({ name: '', email: '', phone: '', message: '' })
+    } else {
+      // 3. Fail-safe: Direct WhatsApp connection so user is never stuck
+      const waText = encodeURIComponent(`Hi bizgrw!\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`)
+      const waUrl = `https://wa.me/917806802169?text=${waText}`
+      window.open(waUrl, '_blank')
+
+      setStatus('success')
+      setStatusMsg('Connecting you directly via WhatsApp (+91 78068 02169). Our team will respond immediately!')
+      setForm({ name: '', email: '', phone: '', message: '' })
     }
   }
 

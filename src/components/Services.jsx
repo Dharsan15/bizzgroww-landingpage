@@ -1,8 +1,8 @@
 const featureCards = [
   {
-    title: 'Website Development',
-    desc: 'Modern, fast websites built to showcase your business and turn visitors into paying customers.',
-    tag: 'Websites & Apps',
+    title: 'Website',
+    desc: 'Fast, mobile-friendly websites that help local businesses turn visitors into calls and enquiries.',
+    tag: 'Website + WhatsApp Button',
     icon: (
       <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -10,9 +10,9 @@ const featureCards = [
     ),
   },
   {
-    title: 'Mobile App Development',
-    desc: 'Easy-to-use iPhone & Android apps designed to keep your customers coming back to you.',
-    tag: 'iOS & Android',
+    title: 'Mobile App',
+    desc: 'Simple iPhone & Android apps for businesses that want customers to book, order and come back.',
+    tag: 'Booking & Ordering Apps',
     icon: (
       <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -21,8 +21,8 @@ const featureCards = [
   },
   {
     title: 'Digital Marketing',
-    desc: 'Targeted Google & Facebook ads that drive real phone calls, store visits, and sales.',
-    tag: 'Google & Meta Ads',
+    desc: 'Google & Facebook ads for local shops and service businesses, built to bring real phone calls and store visits.',
+    tag: 'Google & Meta Ads Setup',
     icon: (
       <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -31,8 +31,8 @@ const featureCards = [
   },
   {
     title: 'Content Creation',
-    desc: 'Engaging Reels, photos, graphics, and clear text that showcase your services and boost engagement effortlessly.',
-    tag: 'Reels, Graphics & Copy',
+    desc: 'Reels, posters and captions made for cafés, clinics and local brands that want to look professional online.',
+    tag: 'Reels, Posters & Captions',
     icon: (
       <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -41,8 +41,8 @@ const featureCards = [
   },
   {
     title: 'Social Media Management',
-    desc: 'Regular posts and management on Instagram & Facebook to keep your business active and trusted.',
-    tag: 'Social Presence',
+    desc: 'Regular Instagram & Facebook posting so your business stays active, consistent and trusted.',
+    tag: 'Monthly Posting Plan',
     icon: (
       <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />

@@ -23,8 +23,8 @@ const footerCols = [
   {
     title: 'Services',
     links: [
-      { label: 'Website Development', href: '#services' },
-      { label: 'Mobile App Development', href: '#services' },
+      { label: 'Website', href: '#services' },
+      { label: 'Mobile App', href: '#services' },
       { label: 'Digital Marketing', href: '#services' },
       { label: 'Content Creation', href: '#services' },
       { label: 'Social Media Management', href: '#services' },
