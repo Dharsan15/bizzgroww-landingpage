@@ -16,12 +16,12 @@ export default function Navbar() {
   }, [mobileOpen])
 
   return (
-    <header className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+    <header className="fixed top-3 sm:top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-4 pointer-events-none">
       <div className="w-full max-w-4xl flex items-center justify-between nav-pill-floating shadow-none pointer-events-auto">
         {/* Placeholder Logo with 30% squircle mark */}
         <a
           href="#home"
-          className="flex items-center group focus-visible:outline-none pl-1"
+          className="flex items-center group focus-visible:outline-none pl-0.5 sm:pl-1 shrink-0"
         >
           <Logo />
         </a>
@@ -40,16 +40,16 @@ export default function Navbar() {
         </nav>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           <a
             href="#contact"
-            className="btn-outline-sm hidden sm:inline-flex"
+            className="hidden md:inline-flex btn-outline-sm whitespace-nowrap"
           >
             Contact
           </a>
           <a
             href="#contact"
-            className="btn-primary text-xs sm:text-sm py-2 px-4 sm:px-5"
+            className="btn-primary text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4 md:px-5 whitespace-nowrap shrink-0"
           >
             Book a call
           </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
           {/* Mobile menu toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded-full text-[#141414] hover:bg-[#e8e8e8] transition-colors focus:outline-none"
+            className="md:hidden p-1.5 sm:p-2 rounded-full text-[#141414] hover:bg-[#e8e8e8] transition-colors focus:outline-none shrink-0"
             aria-label="Toggle Menu"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

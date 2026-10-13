@@ -3,8 +3,8 @@ import Logo from './Logo'
 export default function CTASection() {
   return (
     <section className="py-8 md:py-10 bg-white">
-      <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <div className="card-soft p-10 sm:p-14 text-center">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="card-soft p-6 sm:p-10 lg:p-14 text-center">
           {/* Mobbin Placeholder Logo */}
           <div className="flex justify-center mb-8">
             <Logo />

@@ -28,7 +28,7 @@ const steps = [
 export default function Process() {
   return (
     <section id="process" className="py-8 md:py-10 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <span className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
           HOW IT WORKS
         </span>

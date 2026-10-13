@@ -157,7 +157,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-8 md:py-10 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 md:mb-12">
           <span className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
             CONTACT US

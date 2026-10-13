@@ -167,16 +167,16 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-28 pb-8 md:pt-36 md:pb-10 bg-white overflow-hidden"
+      className="relative pt-28 pb-8 sm:pt-32 md:pt-36 md:pb-10 bg-white overflow-hidden"
     >
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-8 text-center flex flex-col items-center">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Eyebrow: Mobbin soft stadium pill */}
         <motion.div
           initial={reduce ? false : { opacity: 0, filter: 'blur(8px)', y: 6 }}
           animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{ duration: 0.75, ease: EASE }}
           style={{ willChange: 'filter, opacity, transform' }}
-          className="inline-flex items-center gap-2 bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-8"
+          className="inline-flex items-center gap-2 bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 sm:mb-8"
         >
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#141414]" />
           <span>GROW YOUR BUSINESS ONLINE</span>
@@ -193,8 +193,8 @@ export default function Hero() {
           aria-hidden="true"
           style={{
             fontFamily: "'Geist', -apple-system, sans-serif",
-            fontSize: 'clamp(36px, 7.2vw, 88px)',
-            lineHeight: 1.05,
+            fontSize: 'clamp(28px, 6.8vw, 84px)',
+            lineHeight: 1.1,
             letterSpacing: '-0.035em',
             fontWeight: 500,
             maxWidth: 1250,
@@ -227,16 +227,7 @@ export default function Hero() {
           </div>
 
           {/* Dissolving Rotating Phrase in Mobbin Muted #707070 */}
-          <div
-            style={{
-              display: 'grid',
-              justifyItems: 'center',
-              alignItems: 'start',
-              minHeight: '1.25em',
-              width: '100%',
-              marginTop: '0.04em',
-            }}
-          >
+          <div className="hero-phrase-container">
             <AnimatePresence>
               <motion.span
                 key={i}
@@ -316,7 +307,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.85 }}
           style={{ willChange: 'filter, opacity, transform' }}
-          className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl font-[300] text-[#707070] leading-relaxed max-w-2xl mx-auto"
+          className="mt-2 sm:mt-4 text-base sm:text-lg md:text-xl font-[300] text-[#707070] leading-relaxed max-w-2xl mx-auto"
         >
           <strong className="text-[#141414] font-medium">bizgrw</strong> builds modern websites, mobile apps, and online ads that bring real paying customers straight to your door — zero technical knowledge needed.
         </motion.p>
@@ -343,7 +334,7 @@ export default function Hero() {
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           transition={{ duration: 0.85, ease: EASE, delay: 1.25 }}
           style={{ willChange: 'filter, opacity, transform' }}
-          className="mt-14 text-xs font-semibold tracking-wider text-[#adadad] uppercase"
+          className="mt-10 sm:mt-14 text-[11px] sm:text-xs font-semibold tracking-wider text-[#adadad] uppercase max-w-md sm:max-w-none mx-auto leading-relaxed"
         >
           WE BUILD YOUR WEBSITE • WE RUN YOUR ADS • YOU GROW YOUR BUSINESS
         </motion.p>

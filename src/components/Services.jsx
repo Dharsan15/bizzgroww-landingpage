@@ -54,7 +54,7 @@ const featureCards = [
 export default function Services() {
   return (
     <section id="services" className="py-8 md:py-10 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="text-center mb-10 md:mb-12">
@@ -101,7 +101,7 @@ export default function Services() {
         </div>
 
         {/* Simple Online Growth Section — 2-Column with Modern Floating Outcome Cards */}
-        <div className="card-soft relative overflow-hidden p-8 sm:p-12 lg:p-14">
+        <div className="card-soft relative overflow-hidden p-6 sm:p-10 lg:p-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Content */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
