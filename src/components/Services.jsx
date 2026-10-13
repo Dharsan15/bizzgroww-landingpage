@@ -192,7 +192,7 @@ export default function Services() {
                       </div>
                       <div>
                         <div className="text-[11px] font-bold uppercase tracking-wider text-[#707070]">Brand Reach</div>
-                        <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">50,000+ <span className="text-base sm:text-lg font-bold text-neutral-700">Views</span></div>
+                        <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">10,000+ <span className="text-base sm:text-lg font-bold text-neutral-700">Views</span></div>
                       </div>
                     </div>
                     {/* Growth Badge */}
@@ -238,7 +238,7 @@ export default function Services() {
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" /> Live
                           </span>
                         </div>
-                        <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">320+ <span className="text-base sm:text-lg font-bold text-neutral-700">Leads</span></div>
+                        <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">50+ <span className="text-base sm:text-lg font-bold text-neutral-700">Leads</span></div>
                       </div>
                     </div>
                     {/* Badge */}
@@ -272,7 +272,7 @@ export default function Services() {
                       </div>
                       <div>
                         <div className="text-[11px] font-bold uppercase tracking-wider text-[#707070]">Sales Generated</div>
-                        <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">₹1.84 Lakhs <span className="text-xs sm:text-sm font-semibold text-[#707070]">in Orders</span></div>
+                        <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">₹50,000 <span className="text-xs sm:text-sm font-semibold text-[#707070]">in Orders</span></div>
                       </div>
                     </div>
                     <div className="inline-flex items-center gap-1 bg-emerald-500 text-white px-2.5 py-1 rounded-full text-[11px] font-bold shadow-xs shrink-0">
@@ -284,7 +284,7 @@ export default function Services() {
                   </div>
                   <div className="flex items-center justify-between pt-3 border-t border-neutral-100 mt-2">
                     <div className="text-xs font-semibold text-neutral-700">
-                      <strong className="text-[#141414] font-bold">From ₹34,000 ad budget</strong>
+                      <strong className="text-[#141414] font-bold">From ₹10,000 ad budget</strong>
                     </div>
                     <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#707070] bg-neutral-100 px-2.5 py-1 rounded-full">
                       <span>Google &amp; Meta Ads</span>
