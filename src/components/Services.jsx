@@ -142,7 +142,7 @@ export default function Services() {
           whileInView={isMobile ? { opacity: 1, y: 0 } : false}
           viewport={isMobile ? { once: true, amount: 0.15 } : undefined}
           transition={{ duration: 0.7, ease: EASE }}
-          className="card-soft relative overflow-hidden p-6 sm:p-10 lg:p-14"
+          className="card-soft relative overflow-hidden p-4 sm:p-10 lg:p-14"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Content */}
@@ -154,7 +154,7 @@ export default function Services() {
               <h3 className="text-2xl sm:text-4xl md:text-5xl font-[650] text-[#141414] tracking-[-0.03em] leading-[1.08] mb-6">
                 We handle your online presence so you can focus on your business.
               </h3>
-              <p className="text-[#707070] text-base md:text-lg font-[300] leading-relaxed mb-8">
+              <p className="text-[#707070] text-base md:lg font-[300] leading-relaxed mb-8">
                 From building your custom website to running targeted Google and Facebook ads, <strong className="font-semibold text-[#141414]">bizgrw</strong> manages everything for you so you get real calls, visits, and sales.
               </p>
               <a
@@ -178,25 +178,25 @@ export default function Services() {
               {/* Outer Floating Composition Layout */}
               <div className="relative w-full max-w-[460px] flex flex-col gap-4 text-left">
                 {/* CARD 1: Local Customer Reach (Offset Left / Top) */}
-                <div className="animate-float-1 card-glass rounded-2xl p-5 border border-white/80 shadow-[0_18px_38px_-12px_rgba(0,0,0,0.07)] hover:border-neutral-200/90 relative z-20 sm:w-[94%] sm:self-start">
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <div className="flex items-center gap-2.5">
+                <div className="animate-float-1 card-glass rounded-2xl p-4 sm:p-5 border border-white/80 shadow-[0_18px_38px_-12px_rgba(0,0,0,0.07)] hover:border-neutral-200/90 relative z-20 sm:w-[94%] sm:self-start">
+                  <div className="flex items-start justify-between gap-2.5 mb-3">
+                    <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
                       {/* Gradient Icon Badge */}
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-pink-500 via-rose-500 to-amber-400 flex items-center justify-center text-white shadow-sm shrink-0">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-pink-500 via-rose-500 to-amber-400 flex items-center justify-center text-white shadow-sm shrink-0">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                           <circle cx="8.5" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                           <line strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="20" x2="20" y1="8" y2="14" />
                           <line strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="23" x2="17" y1="11" y2="11" />
                         </svg>
                       </div>
-                      <div>
-                        <div className="text-[11px] font-bold uppercase tracking-wider text-[#707070]">Brand Reach</div>
+                      <div className="min-w-0">
+                        <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#707070]">Brand Reach</div>
                         <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">10,000+ <span className="text-base sm:text-lg font-bold text-neutral-700">Views</span></div>
                       </div>
                     </div>
                     {/* Growth Badge */}
-                    <div className="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 border border-emerald-200/60 px-2.5 py-1 rounded-full text-xs font-bold shrink-0">
+                    <div className="inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 border border-emerald-200/60 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold shrink-0">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
                       </svg>
@@ -222,19 +222,19 @@ export default function Services() {
                 </div>
 
                 {/* CARD 2: Direct Customer Inquiries (Offset Right / Center) */}
-                <div className="animate-float-2 card-glass rounded-2xl p-5 border border-white/80 shadow-[0_20px_42px_-12px_rgba(0,0,0,0.08)] hover:border-neutral-200/90 relative z-30 sm:w-[94%] sm:self-end sm:-mt-2">
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <div className="flex items-center gap-2.5">
+                <div className="animate-float-2 card-glass rounded-2xl p-4 sm:p-5 border border-white/80 shadow-[0_20px_42px_-12px_rgba(0,0,0,0.08)] hover:border-neutral-200/90 relative z-30 sm:w-[94%] sm:self-end sm:-mt-2">
+                  <div className="flex items-start justify-between gap-2.5 mb-3">
+                    <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
                       {/* WhatsApp / Phone Icon Badge */}
-                      <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-sm shrink-0">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-sm shrink-0">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
-                      <div>
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#707070]">Customer Inquiries</span>
-                          <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#707070]">Customer Inquiries</span>
+                          <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" /> Live
                           </span>
                         </div>
@@ -243,7 +243,7 @@ export default function Services() {
                     </div>
                     {/* Badge */}
                     <div className="text-right shrink-0">
-                      <div className="text-xs font-bold text-[#141414] bg-neutral-100 px-2.5 py-1 rounded-full border border-neutral-200/60 inline-flex items-center gap-1">
+                      <div className="text-[10px] sm:text-xs font-bold text-[#141414] bg-neutral-100 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-neutral-200/60 inline-flex items-center gap-1 whitespace-nowrap">
                         <span className="text-emerald-600 font-extrabold">Calls &amp; WhatsApp</span>
                       </div>
                     </div>
@@ -264,18 +264,18 @@ export default function Services() {
                 </div>
 
                 {/* CARD 3: Sales Generated (Offset Center/Left / Bottom) */}
-                <div className="animate-float-3 card-glass rounded-2xl p-5 border border-white/80 shadow-[0_22px_44px_-12px_rgba(0,0,0,0.08)] hover:border-neutral-200/90 relative z-20 sm:w-[94%] sm:self-start sm:-mt-2">
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-10 h-10 rounded-xl bg-[#141414] text-emerald-400 flex items-center justify-center shadow-sm shrink-0 font-black text-sm">
+                <div className="animate-float-3 card-glass rounded-2xl p-4 sm:p-5 border border-white/80 shadow-[0_22px_44px_-12px_rgba(0,0,0,0.08)] hover:border-neutral-200/90 relative z-20 sm:w-[94%] sm:self-start sm:-mt-2">
+                  <div className="flex items-start justify-between gap-2.5 mb-3">
+                    <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#141414] text-emerald-400 flex items-center justify-center shadow-sm shrink-0 font-black text-sm">
                         <span>5×</span>
                       </div>
-                      <div>
-                        <div className="text-[11px] font-bold uppercase tracking-wider text-[#707070]">Sales Generated</div>
+                      <div className="min-w-0">
+                        <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#707070]">Sales Generated</div>
                         <div className="text-xl sm:text-2xl font-black tracking-tight text-[#141414]">₹50,000 <span className="text-xs sm:text-sm font-semibold text-[#707070]">in Orders</span></div>
                       </div>
                     </div>
-                    <div className="inline-flex items-center gap-1 bg-emerald-500 text-white px-2.5 py-1 rounded-full text-[11px] font-bold shadow-xs shrink-0">
+                    <div className="inline-flex items-center gap-1 bg-emerald-500 text-white px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold shadow-xs shrink-0">
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
                       </svg>
