@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -57,6 +57,7 @@ const featureCards = [
 ]
 
 export default function Services() {
+  const reduce = useReducedMotion()
   const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 768 : false))
 
   useEffect(() => {
@@ -66,30 +67,42 @@ export default function Services() {
   }, [])
 
   return (
-    <section id="services" className="py-8 md:py-10 bg-white">
+    <section id="services" className="-mt-14 sm:mt-0 py-8 md:py-10 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <motion.div
-          initial={isMobile ? { opacity: 0, y: 32 } : false}
-          whileInView={isMobile ? { opacity: 1, y: 0 } : false}
-          viewport={isMobile ? { once: true, amount: 0.25 } : undefined}
-          transition={{ duration: 0.65, ease: EASE }}
-          className="text-center mb-10 md:mb-12"
-        >
-          <span className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+        <div className="text-center mb-10 md:mb-12">
+          <motion.span
+            initial={reduce ? false : (isMobile ? { opacity: 0, filter: 'blur(6px)', y: 8 } : false)}
+            animate={reduce ? undefined : (isMobile ? { opacity: 1, filter: 'blur(0px)', y: 0 } : undefined)}
+            transition={isMobile ? { duration: 0.55, ease: EASE, delay: 0.7 } : undefined}
+            style={{ willChange: 'filter, opacity, transform' }}
+            className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4"
+          >
             WHAT WE DO FOR YOU
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-[650] text-[#141414] max-w-3xl mx-auto tracking-[-0.02em] leading-[1.08]">
+          </motion.span>
+          <motion.h2
+            initial={reduce ? false : (isMobile ? { opacity: 0, filter: 'blur(8px)', y: 12 } : false)}
+            animate={reduce ? undefined : (isMobile ? { opacity: 1, filter: 'blur(0px)', y: 0 } : undefined)}
+            transition={isMobile ? { duration: 0.6, ease: EASE, delay: 0.85 } : undefined}
+            style={{ willChange: 'filter, opacity, transform' }}
+            className="text-3xl sm:text-5xl font-[650] text-[#141414] max-w-3xl mx-auto tracking-[-0.02em] leading-[1.08]"
+          >
             Everything you need to grow.{' '}
             <span className="text-[#707070] block sm:inline">
               Without the tech stress.
             </span>
-          </h2>
-          <p className="mt-4 text-base sm:text-lg font-[300] text-[#707070] max-w-2xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={reduce ? false : (isMobile ? { opacity: 0, filter: 'blur(6px)', y: 10 } : false)}
+            animate={reduce ? undefined : (isMobile ? { opacity: 1, filter: 'blur(0px)', y: 0 } : undefined)}
+            transition={isMobile ? { duration: 0.55, ease: EASE, delay: 1.0 } : undefined}
+            style={{ willChange: 'filter, opacity, transform' }}
+            className="mt-4 text-base sm:text-lg font-[300] text-[#707070] max-w-2xl mx-auto leading-relaxed"
+          >
             We create your website, run your online ads, and manage your social media so new customers find you every single day.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* 5 Card Grid — Mobbin 24px rounded corners, #f0f0f0 hairline border */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-8 md:mb-10">

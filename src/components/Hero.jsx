@@ -183,7 +183,7 @@ export default function Hero() {
           animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
           transition={{ duration: isMobile ? 0.5 : 0.75, ease: EASE }}
           style={{ willChange: 'filter, opacity, transform' }}
-          className="inline-flex items-center gap-2 bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 sm:mb-8"
+          className="inline-flex items-center gap-2 bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 sm:mb-8 -translate-y-8 sm:translate-y-0"
         >
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#141414]" />
           <span>GROW YOUR BUSINESS ONLINE</span>
