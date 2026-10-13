@@ -1,3 +1,8 @@
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+
+const EASE = [0.16, 1, 0.3, 1]
+
 const steps = [
   {
     num: '01',
@@ -26,27 +31,46 @@ const steps = [
 ]
 
 export default function Process() {
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 768 : false))
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section id="process" className="py-8 md:py-10 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <span className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
-          HOW IT WORKS
-        </span>
-        <h2 className="text-3xl sm:text-5xl font-[650] text-[#141414] max-w-3xl mx-auto tracking-[-0.02em] leading-[1.08]">
-          4 Easy Steps.{' '}
-          <span className="text-[#707070] block sm:inline">
-            We handle all the tech work.
+        <motion.div
+          initial={isMobile ? { opacity: 0, y: 32 } : false}
+          whileInView={isMobile ? { opacity: 1, y: 0 } : false}
+          viewport={isMobile ? { once: true, amount: 0.25 } : undefined}
+          transition={{ duration: 0.65, ease: EASE }}
+        >
+          <span className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+            HOW IT WORKS
           </span>
-        </h2>
-        <p className="mt-4 text-base sm:text-lg font-[300] text-[#707070] max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed">
-          A simple, stress-free process to take your business online and bring in new customers.
-        </p>
+          <h2 className="text-3xl sm:text-5xl font-[650] text-[#141414] max-w-3xl mx-auto tracking-[-0.02em] leading-[1.08]">
+            4 Easy Steps.{' '}
+            <span className="text-[#707070] block sm:inline">
+              We handle all the tech work.
+            </span>
+          </h2>
+          <p className="mt-4 text-base sm:text-lg font-[300] text-[#707070] max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed">
+            A simple, stress-free process to take your business online and bring in new customers.
+          </p>
+        </motion.div>
 
         {/* 4-Step Grid — Mobbin 24px cards with hairline outlines */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
           {steps.map((s, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={isMobile ? { opacity: 0, y: 24 } : false}
+              whileInView={isMobile ? { opacity: 1, y: 0 } : false}
+              viewport={isMobile ? { once: true, amount: 0.15 } : undefined}
+              transition={{ duration: 0.55, ease: EASE, delay: i * 0.08 }}
               className="card-mobbin flex flex-col justify-between"
             >
               <div>
@@ -71,7 +95,7 @@ export default function Process() {
                 <span>Phase {i + 1}</span>
                 <span>Step {i + 1} of 4 →</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

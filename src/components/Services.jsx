@@ -1,3 +1,8 @@
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+
+const EASE = [0.16, 1, 0.3, 1]
+
 const featureCards = [
   {
     title: 'Website',
@@ -52,12 +57,26 @@ const featureCards = [
 ]
 
 export default function Services() {
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 768 : false))
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section id="services" className="py-8 md:py-10 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="text-center mb-10 md:mb-12">
+        <motion.div
+          initial={isMobile ? { opacity: 0, y: 32 } : false}
+          whileInView={isMobile ? { opacity: 1, y: 0 } : false}
+          viewport={isMobile ? { once: true, amount: 0.25 } : undefined}
+          transition={{ duration: 0.65, ease: EASE }}
+          className="text-center mb-10 md:mb-12"
+        >
           <span className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
             WHAT WE DO FOR YOU
           </span>
@@ -70,13 +89,17 @@ export default function Services() {
           <p className="mt-4 text-base sm:text-lg font-[300] text-[#707070] max-w-2xl mx-auto leading-relaxed">
             We create your website, run your online ads, and manage your social media so new customers find you every single day.
           </p>
-        </div>
+        </motion.div>
 
         {/* 5 Card Grid — Mobbin 24px rounded corners, #f0f0f0 hairline border */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-8 md:mb-10">
           {featureCards.map((f, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={isMobile ? { opacity: 0, y: 24 } : false}
+              whileInView={isMobile ? { opacity: 1, y: 0 } : false}
+              viewport={isMobile ? { once: true, amount: 0.15 } : undefined}
+              transition={{ duration: 0.55, ease: EASE, delay: i * 0.08 }}
               className="card-mobbin flex flex-col justify-between"
             >
               <div>
@@ -96,12 +119,18 @@ export default function Services() {
                   {f.tag}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Simple Online Growth Section — 2-Column with Modern Floating Outcome Cards */}
-        <div className="card-soft relative overflow-hidden p-6 sm:p-10 lg:p-14">
+        <motion.div
+          initial={isMobile ? { opacity: 0, y: 32 } : false}
+          whileInView={isMobile ? { opacity: 1, y: 0 } : false}
+          viewport={isMobile ? { once: true, amount: 0.15 } : undefined}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="card-soft relative overflow-hidden p-6 sm:p-10 lg:p-14"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Content */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
@@ -252,7 +281,7 @@ export default function Services() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

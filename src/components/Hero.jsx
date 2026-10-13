@@ -126,6 +126,13 @@ export default function Hero() {
   const reduce = useReducedMotion()
   const [i, setI] = useState(0)
   const [rotated, setRotated] = useState(false)
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth < 768 : false))
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Rotation loop: pauses while tab is hidden, disabled for reduced motion
   useEffect(() => {
@@ -167,14 +174,14 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-28 pb-8 sm:pt-32 md:pt-36 md:pb-10 bg-white overflow-hidden"
+      className="relative min-h-[88svh] md:min-h-0 pt-28 pb-12 sm:pt-32 md:pt-36 md:pb-10 bg-white overflow-hidden flex flex-col justify-center md:block"
     >
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Eyebrow: Mobbin soft stadium pill */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, filter: 'blur(8px)', y: 6 }}
+          initial={reduce ? false : { opacity: 0, filter: isMobile ? 'blur(6px)' : 'blur(8px)', y: 6 }}
           animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-          transition={{ duration: 0.75, ease: EASE }}
+          transition={{ duration: isMobile ? 0.5 : 0.75, ease: EASE }}
           style={{ willChange: 'filter, opacity, transform' }}
           className="inline-flex items-center gap-2 bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-6 sm:mb-8"
         >
@@ -193,10 +200,10 @@ export default function Hero() {
           aria-hidden="true"
           style={{
             fontFamily: "'Geist', -apple-system, sans-serif",
-            fontSize: 'clamp(28px, 6.8vw, 84px)',
-            lineHeight: 1.1,
+            fontSize: isMobile ? 'clamp(32px, 7.5vw, 86px)' : 'clamp(36px, 7.2vw, 88px)',
+            lineHeight: isMobile ? 1.08 : 1.05,
             letterSpacing: '-0.035em',
-            fontWeight: 500,
+            fontWeight: isMobile ? 700 : 500,
             maxWidth: 1250,
             width: '100%',
           }}
@@ -216,9 +223,9 @@ export default function Hero() {
                     display: 'inline-block',
                     willChange: 'filter, opacity, transform',
                   }}
-                  initial={reduce ? false : { y: 16, opacity: 0, filter: 'blur(16px)' }}
+                  initial={reduce ? false : { y: isMobile ? 12 : 16, opacity: 0, filter: isMobile ? 'blur(8px)' : 'blur(16px)' }}
                   animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-                  transition={{ duration: 0.95, ease: EASE, delay: 0.15 + idx * 0.08 }}
+                  transition={{ duration: isMobile ? 0.55 : 0.95, ease: EASE, delay: isMobile ? (0.05 + idx * 0.05) : (0.15 + idx * 0.08) }}
                 >
                   {word}
                 </motion.span>
@@ -226,15 +233,16 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Dissolving Rotating Phrase in Mobbin Muted #707070 */}
+          {/* Dissolving Rotating Phrase in Mobbin Muted */}
           <div className="hero-phrase-container">
             <AnimatePresence>
               <motion.span
                 key={i}
                 style={{
                   gridArea: '1 / 1',
-                  color: '#707070',
+                  color: isMobile ? '#525252' : '#707070',
                   display: 'block',
+                  fontWeight: isMobile ? 700 : 500,
                   willChange: 'filter, opacity, transform',
                 }}
                 initial={
@@ -242,7 +250,7 @@ export default function Hero() {
                     ? false
                     : {
                         opacity: 0,
-                        filter: 'blur(16px)',
+                        filter: isMobile ? 'blur(12px)' : 'blur(16px)',
                         y: 8,
                       }
                 }
@@ -251,17 +259,17 @@ export default function Hero() {
                   filter: 'blur(0px)',
                   y: 0,
                   transition: {
-                    duration: 0.7,
+                    duration: isMobile ? 0.6 : 0.7,
                     ease: EASE,
-                    delay: rotated ? 0.15 : 0.45,
+                    delay: rotated ? 0.15 : (isMobile ? 0.28 : 0.45),
                   },
                 }}
                 exit={{
                   opacity: 0,
-                  filter: 'blur(16px)',
+                  filter: isMobile ? 'blur(12px)' : 'blur(16px)',
                   y: -8,
                   transition: {
-                    duration: 0.5,
+                    duration: isMobile ? 0.45 : 0.5,
                     ease: EASE,
                   },
                 }}
@@ -303,9 +311,9 @@ export default function Hero() {
 
         {/* Subtitle: Clean light weight counterpoint to heading */}
         <motion.p
-          initial={reduce ? false : { opacity: 0, y: 14, filter: 'blur(10px)' }}
+          initial={reduce ? false : { opacity: 0, y: isMobile ? 10 : 14, filter: isMobile ? 'blur(8px)' : 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.9, ease: EASE, delay: 0.85 }}
+          transition={{ duration: isMobile ? 0.55 : 0.9, ease: EASE, delay: isMobile ? 0.35 : 0.85 }}
           style={{ willChange: 'filter, opacity, transform' }}
           className="mt-2 sm:mt-4 text-base sm:text-lg md:text-xl font-[300] text-[#707070] leading-relaxed max-w-2xl mx-auto"
         >
@@ -314,9 +322,9 @@ export default function Hero() {
 
         {/* Primary Action Button — Ink Black Stadium Pill */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 12, filter: 'blur(8px)' }}
+          initial={reduce ? false : { opacity: 0, y: isMobile ? 10 : 12, filter: isMobile ? 'blur(6px)' : 'blur(8px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.85, ease: EASE, delay: 1.05 }}
+          transition={{ duration: isMobile ? 0.55 : 0.85, ease: EASE, delay: isMobile ? 0.45 : 1.05 }}
           style={{ willChange: 'filter, opacity, transform' }}
           className="flex items-center justify-center mt-6 sm:mt-8"
         >
@@ -330,9 +338,9 @@ export default function Hero() {
 
         {/* Bottom Kicker in Muted Gray */}
         <motion.p
-          initial={reduce ? false : { opacity: 0, filter: 'blur(6px)' }}
+          initial={reduce ? false : { opacity: 0, filter: isMobile ? 'blur(4px)' : 'blur(6px)' }}
           animate={{ opacity: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 0.85, ease: EASE, delay: 1.25 }}
+          transition={{ duration: isMobile ? 0.55 : 0.85, ease: EASE, delay: isMobile ? 0.55 : 1.25 }}
           style={{ willChange: 'filter, opacity, transform' }}
           className="mt-10 sm:mt-14 text-[11px] sm:text-xs font-semibold tracking-wider text-[#adadad] uppercase max-w-md sm:max-w-none mx-auto leading-relaxed"
         >
