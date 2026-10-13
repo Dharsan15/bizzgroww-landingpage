@@ -317,7 +317,7 @@ export default function Hero() {
           style={{ willChange: 'filter, opacity, transform' }}
           className="mt-2 sm:mt-4 text-base sm:text-lg md:text-xl font-[300] text-[#707070] leading-relaxed max-w-2xl mx-auto"
         >
-          <strong className="text-[#141414] font-medium">bizgrw</strong> builds modern websites, mobile apps, and online ads that bring real paying customers straight to your door — zero technical knowledge needed.
+          <strong className="text-[#141414] font-medium">bizgrw</strong> builds modern websites, mobile apps, and online ads that bring real paying customers straight to your door zero technical knowledge needed.
         </motion.p>
 
         {/* Primary Action Button — Ink Black Stadium Pill */}

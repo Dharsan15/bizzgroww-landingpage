@@ -5,7 +5,7 @@ const EASE = [0.16, 1, 0.3, 1]
 
 const featureCards = [
   {
-    title: 'Website',
+    title: 'Website Development',
     desc: 'Fast, mobile-friendly websites that help local businesses turn visitors into calls and enquiries.',
     tag: 'Website + WhatsApp Button',
     icon: (
@@ -15,7 +15,7 @@ const featureCards = [
     ),
   },
   {
-    title: 'Mobile App',
+    title: 'Mobile App Development',
     desc: 'Simple iPhone & Android apps for businesses that want customers to book, order and come back.',
     tag: 'Booking & Ordering Apps',
     icon: (
