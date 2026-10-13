@@ -27,41 +27,49 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-10 md:py-14 bg-slate-50 border-t border-slate-200/60">
+    <section id="process" className="py-8 md:py-10 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-        <span className="badge-pill mb-3">HOW IT WORKS</span>
-        <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 max-w-3xl mx-auto mt-2">
+        <span className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+          HOW IT WORKS
+        </span>
+        <h2 className="text-3xl sm:text-5xl font-[650] text-[#141414] max-w-3xl mx-auto tracking-[-0.02em] leading-[1.08]">
           4 Easy Steps.{' '}
-          <span className="text-slate-500 font-normal italic">We handle all the tech work.</span>
+          <span className="text-[#707070] block sm:inline">
+            We handle all the tech work.
+          </span>
         </h2>
-        <p className="mt-3 font-body text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+        <p className="mt-4 text-base sm:text-lg font-[300] text-[#707070] max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed">
           A simple, stress-free process to take your business online and bring in new customers.
         </p>
 
-        {/* 4-Step Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+        {/* 4-Step Grid — Mobbin 24px cards with hairline outlines */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
           {steps.map((s, i) => (
-            <div key={i} className="card-white p-6 relative flex flex-col justify-between">
+            <div
+              key={i}
+              className="card-mobbin flex flex-col justify-between"
+            >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="w-9 h-9 rounded-full bg-blue-50 text-blue-600 font-display text-xs font-bold flex items-center justify-center border border-blue-100">
+                <div className="flex items-center justify-between mb-6">
+                  {/* Squircle Step Number */}
+                  <span className="w-9 h-9 rounded-[30%] bg-[#f3f3f3] text-[#141414] text-xs font-bold flex items-center justify-center">
                     {s.num}
                   </span>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider bg-slate-100 text-slate-500 px-2 py-0.5 rounded">
+                  <span className="bg-[#f3f3f3] text-[#707070] text-xs font-semibold px-3 py-1 rounded-full">
                     {s.tag}
                   </span>
                 </div>
-                <h3 className="font-display text-lg font-bold text-slate-900 mb-2">
+                <h3 className="text-xl font-[650] text-[#141414] mb-2.5 tracking-[-0.01em]">
                   {s.title}
                 </h3>
-                <p className="font-body text-xs text-slate-500 leading-relaxed mb-4">
+                <p className="text-sm font-normal text-[#707070] leading-relaxed mb-6">
                   {s.desc}
                 </p>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-semibold text-blue-600">Phase {i + 1}</span>
-                <span className="text-slate-400 font-mono text-xs">Step {i + 1} of 4 →</span>
+              <div className="pt-4 border-t border-[#f0f0f0] flex items-center justify-between text-xs font-semibold text-[#707070]">
+                <span>Phase {i + 1}</span>
+                <span>Step {i + 1} of 4 →</span>
               </div>
             </div>
           ))}
