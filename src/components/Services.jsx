@@ -77,9 +77,9 @@ export default function Services() {
             animate={reduce ? undefined : (isMobile ? { opacity: 1, filter: 'blur(0px)', y: 0 } : undefined)}
             transition={isMobile ? { duration: 0.55, ease: EASE, delay: 0.7 } : undefined}
             style={{ willChange: 'filter, opacity, transform' }}
-            className="inline-block bg-[#f3f3f3] text-[#141414] text-xs font-semibold px-4 py-1.5 rounded-full mb-4"
+            className="inline-block bg-[#f3f3f3] text-[#141414] text-sm sm:text-base font-semibold px-5 py-2 rounded-full mb-4"
           >
-            WHAT WE DO FOR YOU
+            Our Services
           </motion.span>
           <motion.h2
             initial={reduce ? false : (isMobile ? { opacity: 0, filter: 'blur(8px)', y: 12 } : false)}
